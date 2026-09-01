@@ -38,9 +38,13 @@ scripts/                        # validation run by CI and by `pnpm validate`
 - **Author books with Bloom itself**, then copy the folder in. Hand-editing the .htm
   invites invalid DOM; CI runs `scripts/validateBloomBook.mjs` (vendored from
   BloomDesktop's `edit-bloom-book` skill) against every book.
-- **Do not commit files Bloom regenerates** (branding.css, appearance.css,
-  defaultLangStyles.css, origami.css, thumbnails, …). The `.gitignore` lists them; they
-  are outputs of a test run, not fixtures.
+- **Commit the rendering-relevant CSS Bloom regenerates** (branding.css,
+  appearance.css, defaultLangStyles.css, origami.css, langVisibility.css), captured
+  under the Default branding. These snapshots are forensic evidence: when a reference
+  screenshot later breaks, their diff can name the cause. Refresh them whenever you
+  refresh reference screenshots. Run artifacts (thumbnails, coverImage caches,
+  history.db, branding logo copies) stay uncommitted; the `.gitignore` explains the
+  split.
 - **Add a `manifest.json` entry** for every new collection: what it is for, which test
   suite (or manual test) uses it, and `"automation": "automated" | "manual"`.
 - **Stay inside the size budgets**: 10 MB per file, 50 MB per book folder (CI-enforced;

@@ -2,18 +2,18 @@
 *-current.png
 *-diff.png
 
-# Bloom-regenerated book files. When tests run, Bloom rewrites/copies these into each
-# book folder, so they are outputs, not fixtures. Genuine fixture inputs stay tracked:
-# *.htm, meta.json, appearance.json, image*.png, customCollectionStyles.css,
-# publish-settings.json, screenshots/*-reference.png.
-collections/**/branding.css
-collections/**/appearance.css
-collections/**/defaultLangStyles.css
-# origami.css is a shipping support file that Bloom copies into every book folder at
-# BringBookUpToDate time, so it is an output like the three above. Leaving it untracked
-# also lets tests catch unexpected changes in what Bloom copies from the distribution.
-collections/**/origami.css
-collections/**/langVisibility.css
+# Bloom-regenerated files fall in two classes.
+#
+# 1. Rendering-relevant CSS (branding.css, appearance.css, defaultLangStyles.css,
+#    origami.css, langVisibility.css) is COMMITTED, deliberately: when a reference
+#    screenshot breaks, the diff of these snapshots can name the cause. Tests never
+#    write into this repo (they run Bloom on a temp copy), so the snapshots only move
+#    when someone refreshes them on purpose — refresh them whenever you update the
+#    reference screenshots. Default branding only.
+#
+# 2. Run artifacts stay ignored: the suite switches brandings mid-run, so these hold
+#    whichever branding ran last, and history.db is a binary that changes on every
+#    open. Their diffs carry noise, not evidence.
 collections/**/thumbnail.png
 collections/**/coverImage*.jpg
 collections/**/license.png
