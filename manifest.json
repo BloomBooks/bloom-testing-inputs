@@ -3,7 +3,16 @@
     "collections": {
         "basic": {
             "purpose": "Two minimal books (A5 Portrait, 16x9 Landscape) with reference screenshots, used for visual regression across brandings and themes.",
-            "usedBy": ["BloomDesktop src/BloomVisualRegressionTests"],
+            "usedBy": [
+                "BloomDesktop src/BloomVisualRegressionTests"
+            ],
+            "automation": "automated"
+        },
+        "page-copy": {
+            "purpose": "Two books for the copy-page e2e test: \"Copy Source\", whose first content page carries a custom style, an image, a Talking Book recording, a video and a custom origami layout, and \"Copy Destination\", an ordinary book the page is pasted into.",
+            "usedBy": [
+                "BloomDesktop src/BloomE2E"
+            ],
             "automation": "automated"
         }
     }
