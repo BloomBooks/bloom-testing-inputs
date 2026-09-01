@@ -1,0 +1,13 @@
+{
+    "name": "bloom-testing-inputs",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "validate": "node scripts/runValidation.mjs",
+        "test": "node --test scripts/validateBloomBook.test.mjs"
+    },
+    "devDependencies": {
+        "jsdom": "^24.0.0"
+    },
+    "packageManager": "pnpm@11.5.2"
+}

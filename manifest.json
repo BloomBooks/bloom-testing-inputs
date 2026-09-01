@@ -1,0 +1,10 @@
+{
+    "description": "Per-collection metadata. Every folder under collections/ must have an entry here; CI enforces this.",
+    "collections": {
+        "basic": {
+            "purpose": "Two minimal books (A5 Portrait, 16x9 Landscape) with reference screenshots, used for visual regression across brandings and themes.",
+            "usedBy": ["BloomDesktop src/BloomVisualRegressionTests"],
+            "automation": "automated"
+        }
+    }
+}
