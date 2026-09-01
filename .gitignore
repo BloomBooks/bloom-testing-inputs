@@ -11,6 +11,14 @@
 #    when someone refreshes them on purpose — refresh them whenever you update the
 #    reference screenshots. Default branding only.
 #
+# 1b. basePage.css and previewMode.css stay ignored even though Bloom copies them in
+#    and they affect rendering: they are byte copies of stylesheets versioned in the
+#    BloomDesktop repo, so their forensic record already exists there, tied to this
+#    repo through build/testing-inputs.pin. Committing them here would only churn on
+#    every Bloom version.
+collections/**/basePage.css
+collections/**/previewMode.css
+#
 # 2. Run artifacts stay ignored: the suite switches brandings mid-run, so these hold
 #    whichever branding ran last, and history.db is a binary that changes on every
 #    open. Their diffs carry noise, not evidence.
