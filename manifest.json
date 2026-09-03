@@ -15,5 +15,22 @@
             ],
             "automation": "automated"
         }
+    },
+    "fonts": {
+        "description": "Fonts a test installs before it runs; fonts/README.md has each font's license, source, and the verdict Bloom gives it.",
+        "Alef": {
+            "purpose": "A genuinely free (OFL) font whose metadata says only 'All rights reserved', so Bloom marks it unsuitable: the non-Microsoft exclamation-mark case for the font chooser test.",
+            "license": "SIL Open Font License 1.1 (fonts/Alef/OFL.txt)",
+            "source": "https://github.com/google/fonts/tree/main/ofl/alef",
+            "bloomVerdict": "unsuitable",
+            "usedBy": ["BloomDesktop src/BloomE2E tests/font-chooser.spec.ts"]
+        },
+        "Luciole": {
+            "purpose": "A genuinely free (CC BY 4.0) font whose license metadata Bloom's heuristics cannot read, so Bloom marks it unknown: the question-mark case for the font chooser test.",
+            "license": "Creative Commons Attribution 4.0 International (fonts/Luciole/LICENSE.txt)",
+            "source": "https://www.luciole-vision.com/luciole-en.html",
+            "bloomVerdict": "unknown",
+            "usedBy": ["BloomDesktop src/BloomE2E tests/font-chooser.spec.ts"]
+        }
     }
 }
