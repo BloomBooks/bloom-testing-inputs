@@ -29,6 +29,8 @@ collections/
       <Book Title>.htm          # the book DOM (validated by CI)
       meta.json, appearance.json, publish-settings.json, images…
       screenshots/*-reference.png   # committed baselines, when the owning test uses them
+fonts/
+  <Font>/*.ttf + license file   # fonts a test installs before it runs; see fonts/README.md
 manifest.json                   # required entry per collection: purpose, usedBy, automation
 scripts/                        # validation run by CI and by `pnpm validate`
 ```
